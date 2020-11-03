@@ -1,5 +1,5 @@
 # Christmassacre
-(Unity) DAGD 315 Group Project  
+(Unity) DAGD 315 Group Project (in progress)  
 Team Lead: Robby Rutkofske  
 Art Team: Meghan Casey, Mira Harmon, Chloe Stetson  
 Programmer: Justin Lai  
