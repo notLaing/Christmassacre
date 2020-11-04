@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -32,11 +33,17 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        //movement bounds
+        if ((movement.x == 1 && !(rb.position.x < -1)) || (movement.x == -1 && !(rb.position.x > -8))) movement.x = 0;
+        if ((movement.y == 1 && !(rb.position.y < 4)) || (movement.y == -1 && !(rb.position.y > -4))) movement.y = 0;
+
         rb.MovePosition(rb.position + (movement * moveSpeed * Time.fixedDeltaTime));
 
         Vector2 lookDir = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
+        if (angle > 60f) angle = 60f;
+        else if (angle < -60f) angle = -60f;
+        firePoint.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
     }
 
 
