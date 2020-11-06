@@ -36,6 +36,7 @@ public class ShootingEnemy : MonoBehaviour
                 direction.x = ((player.transform.position.x - transform.position.x) + distanceFromPlayer) / Mathf.Abs((player.transform.position.x - transform.position.x) + distanceFromPlayer);
             }
             else direction.x = 0f;
+            //adjust y-position to be near player
             if (Mathf.Abs(rb.position.y - player.transform.position.y) > .5f)
             {
                 direction.y = (player.transform.position.y - transform.position.y) / Mathf.Abs(player.transform.position.y - transform.position.y);

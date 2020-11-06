@@ -6,7 +6,8 @@ public class EnemySpawner_Right : MonoBehaviour
 {
     public GameObject basicEnemyPrefab;
     public GameObject shootingEnemyPrefab;
-    GameObject[] enemyArray = new GameObject[2];
+    public GameObject chargingEnemyPrefab;
+    GameObject[] enemyArray = new GameObject[3];
     float timeElapsed = 0f;
     Vector3 displacement;
     int enemySelector = 0;
@@ -15,6 +16,7 @@ public class EnemySpawner_Right : MonoBehaviour
     {
         enemyArray[0] = basicEnemyPrefab;
         enemyArray[1] = shootingEnemyPrefab;
+        enemyArray[2] = chargingEnemyPrefab;
     }
 
     void FixedUpdate()
@@ -24,10 +26,12 @@ public class EnemySpawner_Right : MonoBehaviour
         if(timeElapsed > 3f)
         {
             timeElapsed = 0f;
-            enemySelector = Random.Range(0, 2);
+            enemySelector = Random.Range(0, 3);
             displacement = new Vector3(0f, Random.Range(-5f, 5f), 0f);
             //create enemy
-            GameObject bullet = Instantiate(enemyArray[enemySelector], transform.position + displacement, transform.rotation);
+            GameObject enemy = Instantiate(enemyArray[enemySelector], transform.position + displacement, transform.rotation);
+            /*enemySelector++;
+            if (enemySelector > 2) enemySelector = 0;*/
         }
     }
 }

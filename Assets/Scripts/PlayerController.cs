@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
 
         rb.MovePosition(rb.position + (movement * moveSpeed * Time.fixedDeltaTime));
 
+        //rotate the "gun"
         Vector2 lookDir = mousePos - rb.position;
         angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         if (angle > 60f) angle = 60f;

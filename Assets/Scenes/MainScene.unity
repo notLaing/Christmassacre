@@ -678,8 +678,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70379699e7b301c4f92795fabe94f681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basicEnemyPrefab: {fileID: 6119002561302051324, guid: 5e2bb529c9db6894a9fd4d33a0906395, type: 3}
+  basicEnemyPrefab: {fileID: 107048053476078329, guid: 0a1401cd9b4370e4f99dfe69dab79d35, type: 3}
   shootingEnemyPrefab: {fileID: 1486316770809621019, guid: 9d3e5e474412327478bbf388e97ef7c3, type: 3}
+  chargingEnemyPrefab: {fileID: 2808963206823302721, guid: ba5e83248c63d594e927a641135fd22f, type: 3}
 --- !u!4 &1419407075
 Transform:
   m_ObjectHideFlags: 0

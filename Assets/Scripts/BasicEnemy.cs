@@ -9,7 +9,7 @@ public class BasicEnemy : MonoBehaviour
     public Rigidbody2D rb;
 
     Vector2 direction;
-    float enemySpeed = 1.5f;
+    float enemySpeed = 3f;
 
     void Start()
     {
@@ -19,6 +19,7 @@ public class BasicEnemy : MonoBehaviour
     void FixedUpdate()
     {
         direction.x = -1f;
+        //adjust y-position to be near player
         if (Mathf.Abs(rb.position.y - player.transform.position.y) > .5f)
         {
             direction.y = (player.transform.position.y - transform.position.y) / Mathf.Abs(player.transform.position.y - transform.position.y);
