@@ -54,7 +54,6 @@ public class ShootingEnemy : MonoBehaviour
             {
                 waitTime = 0f;
                 distanceFromPlayer = Random.Range(3f, 7f);
-                Debug.Log(distanceFromPlayer);
                 enemyShoot();
                 move = true;
             }
@@ -67,5 +66,27 @@ public class ShootingEnemy : MonoBehaviour
         GameObject bullet = Instantiate(enemyBulletPrefab, enemyFirePoint.position, enemyFirePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(enemyFirePoint.right * enemyBulletSpeed * -1, ForceMode2D.Impulse);
+    }
+
+    /*void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Debug.Log("Hit something");
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
+        else if (collision.gameObject.tag == "Player")
+        {
+            //Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+            Debug.Log("Player");
+        }
+    }*/
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Player")
+        {
+            Debug.Log("Player");
+        }
     }
 }

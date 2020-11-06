@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletScript : MonoBehaviour
+public class EnemyBulletScript : MonoBehaviour
 {
     //public GameObject hitEffect;
 
@@ -18,12 +18,14 @@ public class BulletScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Enemy")
+        if (collider.gameObject.tag == "Player")
         {
-            Debug.Log("Enemy was shot");
-            Destroy(collider.gameObject);
+            Debug.Log("Player was shot");
+            Destroy(gameObject);
         }
-
-        Destroy(gameObject);
+        else if (collider.gameObject.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }
     }
 }

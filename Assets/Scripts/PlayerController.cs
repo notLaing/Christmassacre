@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
     public float bulletSpeed = 20f;
+    float angle = 0f;
 
     // Update is called once per frame
     void Update()
@@ -40,13 +41,21 @@ public class PlayerController : MonoBehaviour
         rb.MovePosition(rb.position + (movement * moveSpeed * Time.fixedDeltaTime));
 
         Vector2 lookDir = mousePos - rb.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+        angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         if (angle > 60f) angle = 60f;
         else if (angle < -60f) angle = -60f;
         firePoint.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
     }
 
 
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Enemy")
+        {
+            Debug.Log("Player touched enemy");
+        }
+    }
 
     void Shoot()
     {

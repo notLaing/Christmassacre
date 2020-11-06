@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486316769450252758}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.67, y: 0, z: 0}
+  m_LocalPosition: {x: -0.7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1486316770809621014}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1486316770809621018}
   m_Layer: 0
   m_Name: ShootingEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,7 +147,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -178,5 +178,5 @@ MonoBehaviour:
   player: {fileID: 8964420091970706297, guid: 5709b54b5b0f8ec45b71d7319bd4259b, type: 3}
   rb: {fileID: 1486316770809621016}
   enemyFirePoint: {fileID: 1486316769450252757}
-  enemyBulletPrefab: {fileID: 7118702570334182279, guid: adfa56764090a784bb3b1f50d193f185, type: 3}
+  enemyBulletPrefab: {fileID: 3995739752382254920, guid: 77b1b22cef845f747b42cfc763cb2d89, type: 3}
   enemyBulletSpeed: 10

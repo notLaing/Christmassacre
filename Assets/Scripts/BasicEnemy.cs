@@ -26,4 +26,20 @@ public class BasicEnemy : MonoBehaviour
         else direction.y = 0f;
         rb.MovePosition(rb.position + (direction * enemySpeed * Time.fixedDeltaTime));
     }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Enemy")//not necessary, since I can just ignore collisions with other enemies
+        {
+            Debug.Log("Enemy");
+        }
+        else if (collider.gameObject.tag == "Player")
+        {
+            Debug.Log("Player");
+        }
+        else if (collider.gameObject.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
