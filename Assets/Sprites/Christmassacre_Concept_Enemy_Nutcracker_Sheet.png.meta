@@ -1,0 +1,337 @@
+fileFormatVersion: 2
+guid: 8bcc21228c9ac674ca1850997deb9fe9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2846395125681048324
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_0
+  - first:
+      213: 2468545944495271954
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_1
+  - first:
+      213: -658554166796218066
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_2
+  - first:
+      213: -7997760035643664700
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_3
+  - first:
+      213: 6954771574382566775
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_4
+  - first:
+      213: -3183184111645090176
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_5
+  - first:
+      213: -1145417343773115393
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_6
+  - first:
+      213: -1536512511510459520
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_7
+  - first:
+      213: 54702576055382010
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_8
+  - first:
+      213: -3071731329106522140
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_9
+  - first:
+      213: -1030119098309083741
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_10
+  - first:
+      213: -6651583300444706198
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_11
+  - first:
+      213: -3754852198145891527
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_12
+  - first:
+      213: -7680119868011233801
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_13
+  - first:
+      213: -4580790454880834433
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_14
+  - first:
+      213: 5887306818284282069
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_15
+  - first:
+      213: -8973147926424939601
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_16
+  - first:
+      213: 7204331621502094975
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_17
+  - first:
+      213: 2445577620706983280
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_18
+  - first:
+      213: -5087923703505018951
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_19
+  - first:
+      213: -8272566555791666279
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_20
+  - first:
+      213: -5803072477233833761
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_21
+  - first:
+      213: 2357311813222603899
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_22
+  - first:
+      213: -2971921838077015226
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_23
+  - first:
+      213: 5269544674534799107
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_24
+  - first:
+      213: 1256452983043793672
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_25
+  - first:
+      213: -3051331130120311427
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_26
+  - first:
+      213: -1814347623559913005
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_27
+  - first:
+      213: -7232325165260327297
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_28
+  - first:
+      213: 6535949857907721476
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_29
+  - first:
+      213: 1296191163306549461
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_30
+  - first:
+      213: 391026723191477948
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_31
+  - first:
+      213: -7683952454548490701
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_32
+  - first:
+      213: 1226776433464754104
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_33
+  - first:
+      213: -593323954330420754
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_34
+  - first:
+      213: -903601393974418763
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_35
+  - first:
+      213: 2065697137020222394
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_36
+  - first:
+      213: -8167780617532224078
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_37
+  - first:
+      213: 9154872120926644547
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_38
+  - first:
+      213: -6255123710737829905
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_39
+  - first:
+      213: 6029885657672752334
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_40
+  - first:
+      213: 7182033175270805983
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_41
+  - first:
+      213: 8578245217951840473
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_42
+  - first:
+      213: 4935649992552417953
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_43
+  - first:
+      213: -3626783581327012687
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_44
+  - first:
+      213: -101049331184834688
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_45
+  - first:
+      213: -482224413619170851
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_46
+  - first:
+      213: 8450304586616607537
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_47
+  - first:
+      213: -6792496292401667276
+    second: Christmassacre_Concept_Enemy_Nutcracker_Sheet_48
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Christmassacre_Concept_Enemy_Nutcracker_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf4b06bc6b29f78d0800000000000000
+      internalID: -2846395125681048324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmassacre_Concept_Enemy_Nutcracker_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2103f552579024220800000000000000
+      internalID: 2468545944495271954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmassacre_Concept_Enemy_Nutcracker_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2112c679785cd6f0800000000000000
+      internalID: -658554166796218066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmassacre_Concept_Enemy_Nutcracker_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c6d4ac1f9f320190800000000000000
+      internalID: -7997760035643664700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
