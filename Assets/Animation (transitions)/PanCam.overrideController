@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PanCam
+  m_Controller: {fileID: 9100000, guid: 3946a57a7ffaaac4b8aec44975637031, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 7bba0b7fd1e35904d8387b2564d35490, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 706188bffbd7c474fb2c1993928ba93d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b75ea450384184e419ed8a08e6bf2009, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2cc1237588c3cc44f8ec458ef3df0889, type: 2}
