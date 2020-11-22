@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: f780a200ca1b49a4e9d745c492561542
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Level 1.unity
+    guid: d1a88c986568590479e081c67c80c0b3
   - enabled: 1
     path: Assets/Scenes/Level 2.unity
     guid: a1827b2692e36104792fd88bdab0a3e8
@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 3c6d3cf004f0d0d4ba39d2d9a7af6ad5
+  - enabled: 0
+    path: Assets/Scenes/MainScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
