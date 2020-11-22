@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class PlayerController : MonoBehaviour
     public float bulletSpeed = 20f;
     float angle = 0f;
 
+    public GameObject dutchman;
+
     // Update is called once per frame
     void Update()
     {
@@ -29,6 +32,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
+        }
+
+        if(Input.GetButtonDown("Fire2"))
+        {
+            var createImage = Instantiate(dutchman) as GameObject;
         }
     }
 
