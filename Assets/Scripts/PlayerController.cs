@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public Camera cam;
     Vector2 movement;
     Vector2 mousePos;
+    Color spriteColor;
+    float invincibilityTimer = 0f;
     public int health = 100;
     public bool powerUp = false;
 
@@ -22,9 +24,12 @@ public class PlayerController : MonoBehaviour
     public GameObject bulletPrefab;
     public float bulletSpeed = 20f;
     float angle = 0f;
+    float shootTimer = 0f;
 
+    //power up variables
     public GameObject dutchman;
 
+    //UI variables
     public GameObject transitioner;
     public Text pointText;
 
@@ -33,30 +38,36 @@ public class PlayerController : MonoBehaviour
         cam = Camera.main;
         transitioner = GameObject.Find("LevelLoader");
         pointText = GameObject.Find("PointUI").GetComponentInChildren<Text>();
+        spriteColor = GetComponent<SpriteRenderer>().color;
     }
 
     // Update is called once per frame
     void Update()
     {
+        invincibilityTimer -= Time.deltaTime;
+        if (invincibilityTimer < 0f) invincibilityTimer = 0f;
+        shootTimer += Time.deltaTime;
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetButtonDown("Fire1"))
+        //automatic fire
+        if (Input.GetButton("Fire1"))
         {
-            Shoot();
+            if (shootTimer > .3f)
+            {
+                shootTimer = 0f;
+                Shoot();
+            }
         }
 
-        if(Input.GetButtonDown("Fire2"))
+        //dutchman power up
+        if (Input.GetButtonDown("Fire2"))
         {
             var createImage = Instantiate(dutchman) as GameObject;
         }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            health -= 10;
-            Debug.Log(health);
-        }
 
+        //manually reduce health
         if (Input.GetKeyDown(KeyCode.Q))
         {
             health -= 10;
@@ -64,7 +75,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //point text only on levels 1-4
-        switch(SceneManager.GetActiveScene().buildIndex)
+        switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 0://title
                 break;
@@ -76,7 +87,6 @@ public class PlayerController : MonoBehaviour
                 pointText.text = "Points: " + GameManagerScript.score;
                 break;
         }
-        
     }
 
     void FixedUpdate()
@@ -87,24 +97,47 @@ public class PlayerController : MonoBehaviour
 
         rb.MovePosition(rb.position + (movement * moveSpeed * Time.fixedDeltaTime));
 
-        //rotate the "gun"
+        //rotate the cannon aim
         Vector2 lookDir = mousePos - rb.position;
         angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         if (angle > 60f) angle = 60f;
         else if (angle < -60f) angle = -60f;
         firePoint.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
 
-        //kill player
-        if(health <= 0) transitioner.GetComponent<LevelLoader>().LoadGameOver();
+        //flash the sprite after taking damage
+        if (Mathf.Floor(invincibilityTimer * 10f) % 2 == 0)
+        {
+            spriteColor.a = 1f;
+            GetComponent<SpriteRenderer>().color = spriteColor;
+        }
+        else
+        {
+            spriteColor.a = 0f;
+            GetComponent<SpriteRenderer>().color = spriteColor;
+        }
+
+        //player death loads game over
+        if (health <= 0) transitioner.GetComponent<LevelLoader>().LoadGameOver();
     }
 
 
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Enemy")
+        if (invincibilityTimer <= 0)
         {
-            Debug.Log("Player touched enemy");
+            if (collider.gameObject.tag == "Enemy")
+            {
+                health -= collider.gameObject.GetComponent<EnemyHealthManager>().damageValue;
+                Debug.Log("Remaining health: " + health);
+            }
+            else if (collider.gameObject.tag == "Enemy Bullet")
+            {
+                health -= 10;
+                Debug.Log("Remaining health: " + health);
+            }
+
+            invincibilityTimer = 1.5f;
         }
     }
 
@@ -115,4 +148,9 @@ public class PlayerController : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.right * bulletSpeed, ForceMode2D.Impulse);
     }
+    /*void flash()
+    {
+        if (Mathf.Floor(invincibilityTimer * 10f) % 2 == 0) spriteColor.a = 1f;
+        else spriteColor.a = 0f;
+    }*/
 }

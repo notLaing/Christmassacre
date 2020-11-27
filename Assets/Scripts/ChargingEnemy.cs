@@ -20,6 +20,7 @@ public class ChargingEnemy : MonoBehaviour
         direction.y = 0f;
         GetComponent<EnemyHealthManager>().health = 5;
         GetComponent<EnemyHealthManager>().pointValue = 3;
+        GetComponent<EnemyHealthManager>().damageValue = 30;
     }
 
     void FixedUpdate()
@@ -64,11 +65,11 @@ public class ChargingEnemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Player")
+        /*if (collider.gameObject.tag == "Player")
         {
             Debug.Log("Player");
-        }
-        else if (collider.gameObject.tag == "Wall")
+        }*/
+        if (collider.gameObject.tag == "Wall")
         {
             Destroy(gameObject);
         }

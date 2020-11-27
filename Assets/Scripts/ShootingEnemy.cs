@@ -26,6 +26,7 @@ public class ShootingEnemy : MonoBehaviour
         distanceFromPlayer = Random.Range(3f, 7f);
         GetComponent<EnemyHealthManager>().health = 1;
         GetComponent<EnemyHealthManager>().pointValue = 2;
+        GetComponent<EnemyHealthManager>().damageValue = 5;
     }
 
     void FixedUpdate()
@@ -85,11 +86,11 @@ public class ShootingEnemy : MonoBehaviour
         }
     }*/
 
-    void OnTriggerEnter2D(Collider2D collider)
+    /*void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Player")
         {
             Debug.Log("Player");
         }
-    }
+    }*/
 }

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2508957396960011541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7, y: 0, z: 0}
+  m_LocalPosition: {x: -1.5, y: 0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2373254246415639030}
@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 7628210742112784541}
   - component: {fileID: 5992597880533534946}
   - component: {fileID: 806233070154736811}
+  - component: {fileID: 795442394072665145}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -58,8 +59,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8964420091970706297}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4, y: -2.98, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: -0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 7177526760426049705}
   m_Father: {fileID: 0}
@@ -105,7 +106,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fc6d5f2018b324fcb8b63dd9f88d39e7, type: 3}
+  m_Sprite: {fileID: 9139069577197089750, guid: 4dd0d67a594d4b34aba5b84515c03beb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -154,14 +155,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &806233070154736811
 MonoBehaviour:
@@ -179,7 +180,6 @@ MonoBehaviour:
   rb: {fileID: 7628210742112784541}
   cam: {fileID: 0}
   health: 100
-  points: 0
   powerUp: 0
   firePoint: {fileID: 7177526760426049705}
   bulletPrefab: {fileID: 7118702570334182279, guid: adfa56764090a784bb3b1f50d193f185, type: 3}
@@ -187,3 +187,22 @@ MonoBehaviour:
   dutchman: {fileID: 4758017710752499748, guid: 123b5bf5cec392944919aa680b60bbcd, type: 3}
   transitioner: {fileID: 0}
   pointText: {fileID: 0}
+--- !u!95 &795442394072665145
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8964420091970706297}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d3eada8bf39ec7e4dbd722dae3bae5f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

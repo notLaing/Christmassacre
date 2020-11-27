@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 265703099329288426}
   - component: {fileID: 6828537244738709786}
   - component: {fileID: -772050739264358453}
+  - component: {fileID: 1712494898234637826}
   m_Layer: 0
   m_Name: EvilPenguin
   m_TagString: Enemy
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f58c6f06a7ebaed42b549d8d0895b9a9, type: 3}
+  m_Sprite: {fileID: -8304031505583867327, guid: 87900cb5f2e2be743aa9cf4e588861f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -124,14 +125,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 1.15}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 3, y: 1.15}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 1.15}
+  m_Size: {x: 2, y: 0.7}
   m_EdgeRadius: 0
 --- !u!114 &6828537244738709786
 MonoBehaviour:
@@ -162,3 +163,23 @@ MonoBehaviour:
   player: {fileID: 0}
   health: 2
   pointValue: 1
+  damageValue: 10
+--- !u!95 &1712494898234637826
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107048053476078329}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f82d10d42e908fa478281cd7ab792870, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
