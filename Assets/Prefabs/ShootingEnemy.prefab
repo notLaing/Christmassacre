@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 1486316770809621016}
   - component: {fileID: 1486316770809621017}
   - component: {fileID: 1486316770809621018}
+  - component: {fileID: 994582119349269983}
   m_Layer: 0
   m_Name: ShootingEnemy
   m_TagString: Enemy
@@ -180,3 +181,15 @@ MonoBehaviour:
   enemyFirePoint: {fileID: 1486316769450252757}
   enemyBulletPrefab: {fileID: 3995739752382254920, guid: 77b1b22cef845f747b42cfc763cb2d89, type: 3}
   enemyBulletSpeed: 10
+--- !u!114 &994582119349269983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486316770809621019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8cba4cfd2d91c440b005c5364e1bb0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

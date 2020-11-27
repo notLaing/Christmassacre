@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2808963206823302716}
   - component: {fileID: 2808963206823302723}
   - component: {fileID: 2808963206823302722}
+  - component: {fileID: 960572512623350814}
   m_Layer: 0
   m_Name: EvilElf
   m_TagString: Enemy
@@ -144,5 +145,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577ed37bcc51db742a5a6d164797b45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 8964420091970706297, guid: 5709b54b5b0f8ec45b71d7319bd4259b, type: 3}
   rb: {fileID: 2808963206823302716}
+  health: 10
+--- !u!114 &960572512623350814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2808963206823302721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8cba4cfd2d91c440b005c5364e1bb0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

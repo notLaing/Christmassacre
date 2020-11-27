@@ -20,8 +20,7 @@ public class EnemyBulletScript : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            Debug.Log("Player was shot");
-            Destroy(gameObject);
+            collider.gameObject.GetComponent<PlayerController>().health -= 10;
         }
         else if (collider.gameObject.tag == "Wall")
         {

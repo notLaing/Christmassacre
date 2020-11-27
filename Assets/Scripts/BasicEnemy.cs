@@ -13,7 +13,7 @@ public class BasicEnemy : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Hero(original)");
+        player = GameObject.Find("Hero(Clone)");
     }
 
     void FixedUpdate()

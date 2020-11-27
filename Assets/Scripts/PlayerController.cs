@@ -4,6 +4,7 @@ using System.Threading;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public Camera cam;
     Vector2 movement;
     Vector2 mousePos;
+    public int health = 100;
+    public bool powerUp = false;
 
     //bullet variables
     public Transform firePoint;
@@ -21,6 +24,16 @@ public class PlayerController : MonoBehaviour
     float angle = 0f;
 
     public GameObject dutchman;
+
+    public GameObject transitioner;
+    public Text pointText;
+
+    void Start()
+    {
+        cam = Camera.main;
+        transitioner = GameObject.Find("LevelLoader");
+        pointText = GameObject.Find("PointUI").GetComponentInChildren<Text>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -38,6 +51,32 @@ public class PlayerController : MonoBehaviour
         {
             var createImage = Instantiate(dutchman) as GameObject;
         }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            health -= 10;
+            Debug.Log(health);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            health -= 10;
+            Debug.Log(health);
+        }
+
+        //point text only on levels 1-4
+        switch(SceneManager.GetActiveScene().buildIndex)
+        {
+            case 0://title
+                break;
+            case 5://victory
+                break;
+            case 6://game over
+                break;
+            default:
+                pointText.text = "Points: " + GameManagerScript.score;
+                break;
+        }
+        
     }
 
     void FixedUpdate()
@@ -54,6 +93,9 @@ public class PlayerController : MonoBehaviour
         if (angle > 60f) angle = 60f;
         else if (angle < -60f) angle = -60f;
         firePoint.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+
+        //kill player
+        if(health <= 0) transitioner.GetComponent<LevelLoader>().LoadGameOver();
     }
 
 

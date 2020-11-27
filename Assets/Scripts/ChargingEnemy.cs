@@ -15,9 +15,11 @@ public class ChargingEnemy : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Hero(original)");
+        player = GameObject.Find("Hero(Clone)");
         direction.x = -1f;
         direction.y = 0f;
+        GetComponent<EnemyHealthManager>().health = 5;
+        GetComponent<EnemyHealthManager>().pointValue = 3;
     }
 
     void FixedUpdate()

@@ -6,12 +6,16 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
     public Animator transition;
+    GameObject player;
+    Scene currentScene;
+    string m_Scene;
     public float transitionTime = .1f;
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("space"))
+        //DontDestroyOnLoad(gameObject);
+        if (Input.GetKeyDown("space"))
         {
             LoadNextLevel();
         }
@@ -28,7 +32,7 @@ public class LevelLoader : MonoBehaviour
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
-    IEnumerator LoadLevel(int levelIndex)
+    IEnumerator LoadLevel(int levelIndex)//levelIndex is the next level
     {
         //Play animation
         transition.SetTrigger("Start");

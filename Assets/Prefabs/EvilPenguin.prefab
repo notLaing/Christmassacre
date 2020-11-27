@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8237622642546810334}
   - component: {fileID: 265703099329288426}
   - component: {fileID: 6828537244738709786}
+  - component: {fileID: -772050739264358453}
   m_Layer: 0
   m_Name: EvilPenguin
   m_TagString: Enemy
@@ -144,5 +145,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bcc561e2b0c38d4f8360965b993a96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 8964420091970706297, guid: 5709b54b5b0f8ec45b71d7319bd4259b, type: 3}
   rb: {fileID: 8237622642546810334}
+--- !u!114 &-772050739264358453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107048053476078329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8cba4cfd2d91c440b005c5364e1bb0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  health: 2
+  pointValue: 1

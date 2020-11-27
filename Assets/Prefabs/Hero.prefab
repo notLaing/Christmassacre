@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 268639349683906317}
   - component: {fileID: 7628210742112784541}
   - component: {fileID: 5992597880533534946}
-  - component: {fileID: 2444358024840905076}
+  - component: {fileID: 806233070154736811}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -163,7 +163,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2444358024840905076
+--- !u!114 &806233070154736811
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,7 +178,12 @@ MonoBehaviour:
   moveSpeed: 5
   rb: {fileID: 7628210742112784541}
   cam: {fileID: 0}
+  health: 100
+  points: 0
+  powerUp: 0
   firePoint: {fileID: 7177526760426049705}
   bulletPrefab: {fileID: 7118702570334182279, guid: adfa56764090a784bb3b1f50d193f185, type: 3}
   bulletSpeed: 20
   dutchman: {fileID: 4758017710752499748, guid: 123b5bf5cec392944919aa680b60bbcd, type: 3}
+  transitioner: {fileID: 0}
+  pointText: {fileID: 0}

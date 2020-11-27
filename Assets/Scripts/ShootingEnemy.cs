@@ -22,8 +22,10 @@ public class ShootingEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Hero(original)");
+        player = GameObject.Find("Hero(Clone)");
         distanceFromPlayer = Random.Range(3f, 7f);
+        GetComponent<EnemyHealthManager>().health = 1;
+        GetComponent<EnemyHealthManager>().pointValue = 2;
     }
 
     void FixedUpdate()

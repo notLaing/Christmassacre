@@ -21,7 +21,8 @@ public class BulletScript : MonoBehaviour
         if (collider.gameObject.tag == "Enemy")
         {
             Debug.Log("Enemy was shot");
-            Destroy(collider.gameObject);
+            //Destroy(collider.gameObject);
+            collider.gameObject.GetComponent<EnemyHealthManager>().health--;
         }
 
         Destroy(gameObject);
