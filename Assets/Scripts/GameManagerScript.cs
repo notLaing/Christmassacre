@@ -20,6 +20,7 @@ public static class GameManagerScript
 
     //global variables
     public static int score = 0;
+    public static int stageScore = 0;
     public static int highScore = 0;
     public static int stage = 0;
     public static bool gameOverScreen = false;
