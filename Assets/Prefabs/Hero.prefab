@@ -185,6 +185,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7118702570334182279, guid: adfa56764090a784bb3b1f50d193f185, type: 3}
   bulletSpeed: 20
   dutchman: {fileID: 4758017710752499748, guid: 123b5bf5cec392944919aa680b60bbcd, type: 3}
+  screenWipe: {fileID: 1944537689709818853, guid: bf8508f85e8f1bb439c651bc0e6f0f69, type: 3}
   transitioner: {fileID: 0}
   pointText: {fileID: 0}
 --- !u!95 &795442394072665145

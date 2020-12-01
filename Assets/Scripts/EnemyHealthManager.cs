@@ -18,7 +18,7 @@ public class EnemyHealthManager : MonoBehaviour
     void FixedUpdate()
     {
         //kill
-        if (health <= 0)
+        if (health < 1)
         {
             //player.GetComponent<PlayerController>().points += pointValue;
             GameManagerScript.score += pointValue;
