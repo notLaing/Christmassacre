@@ -65,8 +65,8 @@ public class PlayerController : MonoBehaviour
         //dutchman power up
         if (Input.GetButtonDown("Fire2"))
         {
-            //var createImage = Instantiate(dutchman) as GameObject;
-            var createImage = Instantiate(screenWipe) as GameObject;
+            var createImage = Instantiate(dutchman) as GameObject;
+            //var createImage = Instantiate(screenWipe) as GameObject;
         }
 
         //manually reduce health
