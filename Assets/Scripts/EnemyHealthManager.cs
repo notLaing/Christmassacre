@@ -20,7 +20,7 @@ public class EnemyHealthManager : MonoBehaviour
         //kill
         if (health < 1)
         {
-            //player.GetComponent<PlayerController>().points += pointValue;
+            player.GetComponent<PlayerController>().stageKills += 1;
             GameManagerScript.score += pointValue;
             Destroy(gameObject);
         }

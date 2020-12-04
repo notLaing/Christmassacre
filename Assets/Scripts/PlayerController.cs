@@ -9,7 +9,9 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     //player variables
+    GameObject[] enemiesOnScreen;
     public float moveSpeed = 5f;
+    public float levelCountdown = 3f;
     public Rigidbody2D rb;
     public Camera cam;
     Vector2 movement;
@@ -17,7 +19,9 @@ public class PlayerController : MonoBehaviour
     Color spriteColor;
     float invincibilityTimer = 0f;
     public int health = 100;
+    public int stageKills = 0;
     public bool powerUp = false;
+    bool progressing = false;
 
     //bullet variables
     public Transform firePoint;
@@ -86,7 +90,7 @@ public class PlayerController : MonoBehaviour
             case 6://game over
                 break;
             default:
-                pointText.text = "Points: " + GameManagerScript.score;
+                pointText.text = GameManagerScript.score.ToString();
                 break;
         }
     }
@@ -120,6 +124,45 @@ public class PlayerController : MonoBehaviour
 
         //player death loads game over
         if (health <= 0) transitioner.GetComponent<LevelLoader>().LoadGameOver();
+
+        //progress levels
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 1:
+                if (stageKills > 19 && !progressing)
+                {
+                    levelPrep();
+                    progressing = true;
+                }
+                break;
+            case 2:
+                if (stageKills > 29 && !progressing)
+                {
+                    levelPrep();
+                    progressing = true;
+                }
+                break;
+            case 3:
+                if (stageKills > 39 && !progressing)
+                {
+                    levelPrep();
+                    progressing = true;
+                }
+                break;
+            case 4:
+                if (stageKills > 49 && !progressing)
+                {
+                    levelPrep();
+                    progressing = true;
+                }
+                break;
+        }
+         if(progressing)
+        {
+            levelCountdown -= Time.fixedDeltaTime;
+            enemiesOnScreen = GameObject.FindGameObjectsWithTag("Enemy");
+            if (levelCountdown < 0f && enemiesOnScreen.Length == 0) GameObject.Find("LevelLoader").GetComponent<LevelLoader>().LoadNextLevel();
+        }
     }
 
 
@@ -132,14 +175,14 @@ public class PlayerController : MonoBehaviour
             {
                 health -= collider.gameObject.GetComponent<EnemyHealthManager>().damageValue;
                 Debug.Log("Remaining health: " + health);
+                invincibilityTimer = 1.5f;
             }
             else if (collider.gameObject.tag == "Enemy Bullet")
             {
                 health -= 10;
                 Debug.Log("Remaining health: " + health);
+                invincibilityTimer = 1.5f;
             }
-
-            invincibilityTimer = 1.5f;
         }
     }
 
@@ -150,9 +193,11 @@ public class PlayerController : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.right * bulletSpeed, ForceMode2D.Impulse);
     }
-    /*void flash()
+
+
+    void levelPrep()
     {
-        if (Mathf.Floor(invincibilityTimer * 10f) % 2 == 0) spriteColor.a = 1f;
-        else spriteColor.a = 0f;
-    }*/
+        GameObject spawner = GameObject.Find("Spawner (Right)");
+        spawner.GetComponent<EnemySpawner_Right>().spawn = false;
+    }
 }

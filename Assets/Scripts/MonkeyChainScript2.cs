@@ -30,7 +30,7 @@ public class MonkeyChainScript2 : MonoBehaviour
         if (collider.gameObject.tag == "Enemy")
         {
             Debug.Log("THE MONKEY CHAIN!");
-            Destroy(collider.gameObject);
+            collider.gameObject.GetComponent<EnemyHealthManager>().health -= 5;
         }
     }
 }

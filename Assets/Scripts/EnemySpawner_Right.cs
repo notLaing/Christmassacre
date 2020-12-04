@@ -11,19 +11,21 @@ public class EnemySpawner_Right : MonoBehaviour
     float timeElapsed = 0f;
     Vector3 displacement;
     int enemySelector = 0;
+    public bool spawn = false;
 
     void Start()
     {
         enemyArray[0] = basicEnemyPrefab;
         enemyArray[1] = shootingEnemyPrefab;
         enemyArray[2] = chargingEnemyPrefab;
+        spawn = true;
     }
 
     void FixedUpdate()
     {
         timeElapsed += Time.fixedDeltaTime;
         //spawn an enemy every 3 seconds
-        if(timeElapsed > 3f)
+        if(spawn && timeElapsed > 3f)
         {
             timeElapsed = 0f;
             enemySelector = Random.Range(0, 3);
