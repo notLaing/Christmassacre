@@ -42,7 +42,7 @@ public class MonkeyScript : MonoBehaviour
         if (collider.gameObject.tag == "Enemy")
         {
             Debug.Log("THE MONKEY!!!");
-            Destroy(collider.gameObject);
+            collider.gameObject.GetComponent<EnemyHealthManager>().health -= 5;
         }
     }
 }
