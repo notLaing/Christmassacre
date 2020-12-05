@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour
     Vector2 mousePos;
     Color spriteColor;
     float invincibilityTimer = 0f;
-    public int health = 100;
+    public int health = 5;
+    public int secondaryResource = 0;
     public int stageKills = 0;
     public bool powerUp = false;
     bool progressing = false;
@@ -35,6 +36,9 @@ public class PlayerController : MonoBehaviour
     public GameObject screenWipe;
 
     //UI variables
+    public GameObject resourceUI;
+    GameObject healthUI;
+    GameObject secondaryResourceUI;
     public GameObject transitioner;
     public Text pointText;
 
@@ -44,6 +48,9 @@ public class PlayerController : MonoBehaviour
         transitioner = GameObject.Find("LevelLoader");
         pointText = GameObject.Find("PointUI").GetComponentInChildren<Text>();
         spriteColor = GetComponent<SpriteRenderer>().color;
+        resourceUI = GameObject.Find("UI");
+        healthUI = resourceUI.transform.Find("Canvas").gameObject.transform.Find("Empty Bars").gameObject.transform.Find("Health").gameObject;
+        secondaryResourceUI = resourceUI.transform.Find("Canvas").gameObject.transform.Find("Empty Bars").gameObject.transform.Find("Resource").gameObject;
     }
 
     // Update is called once per frame
@@ -69,14 +76,37 @@ public class PlayerController : MonoBehaviour
         //dutchman power up
         if (Input.GetButtonDown("Fire2"))
         {
-            var createImage = Instantiate(dutchman) as GameObject;
-            //var createImage = Instantiate(screenWipe) as GameObject;
+            /*if (GameManagerScript.score > 99)
+            {
+                if(GameManagerScript.dutchmanReady)
+                {
+                    Instantiate(dutchman);
+                    GameManagerScript.dutchmanReady = false;
+                    GameManagerScript.dutchmanStage = SceneManager.GetActiveScene().buildIndex;
+                }
+                else
+                {
+                    //text for dutchman already being used
+                }
+                
+            }
+            else
+            {
+                //make text that shows that dutchman hasn't been unlocked yet
+            }*/
+            
+            if(secondaryResource > 0)
+            {
+                Instantiate(screenWipe);
+                updateResource();
+            }
+            
         }
 
         //manually reduce health
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            health -= 10;
+            --health;
             Debug.Log(health);
         }
 
@@ -99,7 +129,7 @@ public class PlayerController : MonoBehaviour
     {
         //movement bounds
         if ((movement.x == 1 && !(rb.position.x < -1)) || (movement.x == -1 && !(rb.position.x > -8))) movement.x = 0;
-        if ((movement.y == 1 && !(rb.position.y < 4)) || (movement.y == -1 && !(rb.position.y > -4))) movement.y = 0;
+        if ((movement.y == 1 && !(rb.position.y < 4)) || (movement.y == -1 && !(rb.position.y > -2.8))) movement.y = 0;
 
         rb.MovePosition(rb.position + (movement * moveSpeed * Time.fixedDeltaTime));
 
@@ -157,7 +187,7 @@ public class PlayerController : MonoBehaviour
                 }
                 break;
         }
-         if(progressing)
+        if(progressing)
         {
             levelCountdown -= Time.fixedDeltaTime;
             enemiesOnScreen = GameObject.FindGameObjectsWithTag("Enemy");
@@ -173,17 +203,21 @@ public class PlayerController : MonoBehaviour
         {
             if (collider.gameObject.tag == "Enemy")
             {
-                health -= collider.gameObject.GetComponent<EnemyHealthManager>().damageValue;
-                Debug.Log("Remaining health: " + health);
+                --health;
                 invincibilityTimer = 1.5f;
             }
             else if (collider.gameObject.tag == "Enemy Bullet")
             {
-                health -= 10;
-                Debug.Log("Remaining health: " + health);
+                --health;
                 invincibilityTimer = 1.5f;
             }
         }
+
+        if (collider.gameObject.tag == "Powerup")
+        {
+            ++secondaryResource;
+        }
+        updateResource();
     }
 
     void Shoot()
@@ -199,5 +233,52 @@ public class PlayerController : MonoBehaviour
     {
         GameObject spawner = GameObject.Find("Spawner (Right)");
         spawner.GetComponent<EnemySpawner_Right>().spawn = false;
+    }
+
+
+    void updateResource()
+    {
+        //update health bar
+        switch(health)
+        {
+            case 4:
+                healthUI.transform.Find("100").gameObject.SetActive(false);
+                break;
+            case 3:
+                healthUI.transform.Find("80").gameObject.SetActive(false);
+                break;
+            case 2:
+                healthUI.transform.Find("60").gameObject.SetActive(false);
+                break;
+            case 1:
+                healthUI.transform.Find("40").gameObject.SetActive(false);
+                break;
+            case 0:
+                healthUI.transform.Find("20").gameObject.SetActive(false);
+                break;
+        }
+
+        //update secondary resource bar
+        switch (secondaryResource)
+        {
+            case 0:
+                secondaryResourceUI.transform.Find("25").gameObject.SetActive(false);
+                break;
+            case 1:
+                secondaryResourceUI.transform.Find("25").gameObject.SetActive(true);
+                secondaryResourceUI.transform.Find("50").gameObject.SetActive(false);
+                break;
+            case 2:
+                secondaryResourceUI.transform.Find("50").gameObject.SetActive(true);
+                secondaryResourceUI.transform.Find("75").gameObject.SetActive(false);
+                break;
+            case 3:
+                secondaryResourceUI.transform.Find("75").gameObject.SetActive(true);
+                secondaryResourceUI.transform.Find("100").gameObject.SetActive(false);
+                break;
+            case 4:
+                secondaryResourceUI.transform.Find("100").gameObject.SetActive(true);
+                break;
+        }
     }
 }

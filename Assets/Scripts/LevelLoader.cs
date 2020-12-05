@@ -17,7 +17,8 @@ public class LevelLoader : MonoBehaviour
         transitionObjects[0].SetActive(true);
 
         //specific case for transitioning INTO Level 1
-        if (SceneManager.GetActiveScene().buildIndex == 1 && !GameManagerScript.gameOverScreen) transitionObjects[1].SetActive(true);
+        if (SceneManager.GetActiveScene().buildIndex == 1 && !GameManagerScript.gameOverScreen && !(GameManagerScript.restarting)) transitionObjects[1].SetActive(true);
+        GameManagerScript.restarting = false;
     }
 
     // Update is called once per frame
@@ -45,25 +46,9 @@ public class LevelLoader : MonoBehaviour
         //doesn't matter if this triggers on the title screen since its gameObject isn't active anymore
         transitionObjects[0].GetComponentInChildren<Animator>().SetTrigger("Start");
 
-
-        //"Quit" from game over screen                                                    eventually move to update() since Input will be needed
-        if(SceneManager.GetActiveScene().buildIndex == 6)
-        {
-            GameManagerScript.gameOverScreen = false;
-            StartCoroutine(LoadLevel(0));
-        }
-        //"Restart" from game over screen loads the last level we were at
-        /*else if (SceneManager.GetActiveScene().buildIndex == 6)
-        {
-            GameManagerScript.gameOverScreen = true;
-            StartCoroutine(LoadLevel(GameManagerScript.stage));
-        }*/
         //load next level based on build settings
-        else
-        {
-            GameManagerScript.gameOverScreen = false;
-            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
-        }
+        GameManagerScript.gameOverScreen = false;
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
     IEnumerator LoadLevel(int levelIndex)//levelIndex is the next level
@@ -89,6 +74,14 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator GameOver()
     {
+        //reset any necessary variables
+        if(SceneManager.GetActiveScene().buildIndex == GameManagerScript.dutchmanStage)
+        {
+            GameManagerScript.dutchmanStage = 0;
+            GameManagerScript.dutchmanReady = true;
+        }
+
+
         //Play animation
         transition.SetTrigger("Start");
 
@@ -97,5 +90,42 @@ public class LevelLoader : MonoBehaviour
 
         //Load Scene
         SceneManager.LoadScene("GameOver");
+    }
+
+
+
+    public void RestartLevel()
+    {
+        StartCoroutine(RestartLevelRoutine());
+    }
+
+    IEnumerator RestartLevelRoutine()
+    {
+        GameManagerScript.restarting = true;
+        //reset any necessary variables
+        if (SceneManager.GetActiveScene().buildIndex == GameManagerScript.dutchmanStage)
+        {
+            GameManagerScript.dutchmanStage = 0;
+            GameManagerScript.dutchmanReady = true;
+        }
+
+
+        //set up any necessary elements specifically for level 1
+        if (GameManagerScript.stage == 1)//(SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            transitionObjects[0].SetActive(true);
+            transitionObjects[1].SetActive(false);
+            transitionObjects[0].GetComponentInChildren<Animator>().SetTrigger("Start");
+        }
+
+
+        //Play animation
+        else transition.SetTrigger("Start");
+
+        //Wait
+        yield return new WaitForSeconds(transitionTime);
+
+        //Load Scene
+        SceneManager.LoadScene(GameManagerScript.stage);
     }
 }

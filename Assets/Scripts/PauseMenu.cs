@@ -51,7 +51,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         pauseMenuUI.SetActive(false);
         gamePaused = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        GameObject.Find("LevelLoader").GetComponent<LevelLoader>().RestartLevel();
     }
 
     public void QuitGame()
