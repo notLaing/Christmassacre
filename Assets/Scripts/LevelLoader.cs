@@ -24,13 +24,17 @@ public class LevelLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown(KeyCode.O))
         {
             LoadNextLevel();
         }
-        else if(Input.GetKeyDown(KeyCode.G))
+        else if(Input.GetKeyDown(KeyCode.P))
         {
             LoadGameOver();
+        }
+        else if (Input.GetKeyDown("space") && SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            LoadNextLevel();
         }
     }
 

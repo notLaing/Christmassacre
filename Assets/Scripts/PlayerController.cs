@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     GameObject healthUI;
     GameObject secondaryResourceUI;
     public GameObject transitioner;
-    public Text pointText;
+    public Text[] pointText;
 
     //Jack Frost
     public GameObject JackFrost;
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
     {
         cam = Camera.main;
         transitioner = GameObject.Find("LevelLoader");
-        pointText = GameObject.Find("PointUI").GetComponentInChildren<Text>();
+        pointText = GameObject.Find("PointUI").GetComponentsInChildren<Text>();
         spriteColor = GetComponent<SpriteRenderer>().color;
         resourceUI = GameObject.Find("UI");
         healthUI = resourceUI.transform.Find("Canvas").gameObject.transform.Find("Empty Bars").gameObject.transform.Find("Health").gameObject;
@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
         //dutchman power up
         if (Input.GetButtonDown("Fire2"))
         {
-            /*if (GameManagerScript.score > 99)
+            if (GameManagerScript.score > 99)
             {
                 if(GameManagerScript.dutchmanReady)
                 {
@@ -98,22 +98,42 @@ public class PlayerController : MonoBehaviour
             else
             {
                 //make text that shows that dutchman hasn't been unlocked yet
-            }*/
+            }
+        }
 
+
+        if (Input.GetKeyDown("space"))
+        {
             if (secondaryResource > 0)
             {
                 Instantiate(screenWipe);
                 --secondaryResource;
                 updateResource();
             }
-            
         }
 
         //manually reduce health
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Y))
         {
-            --health;
-            Debug.Log(health);
+            health -= 1;
+            if (health < 0) health = 0;
+            updateResource();
+        }
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            health += 1;
+            if (health > 5) health = 5;
+            updateResource();
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            ++secondaryResource;
+            if (secondaryResource > 4) secondaryResource = 4;
+            updateResource();
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            GameManagerScript.score += 50;
         }
 
         //point text only on levels 1-4
@@ -126,7 +146,8 @@ public class PlayerController : MonoBehaviour
             case 6://game over
                 break;
             default:
-                pointText.text = GameManagerScript.score.ToString();
+                pointText[0].text = GameManagerScript.score.ToString();
+                pointText[1].text = GameManagerScript.highScore.ToString();
                 break;
         }
     }
@@ -252,6 +273,9 @@ public class PlayerController : MonoBehaviour
         //update health bar
         switch(health)
         {
+            case 5:
+                healthUI.transform.Find("100").gameObject.SetActive(true);
+                break;
             case 4:
                 healthUI.transform.Find("100").gameObject.SetActive(false);
                 break;
@@ -288,7 +312,7 @@ public class PlayerController : MonoBehaviour
                 secondaryResourceUI.transform.Find("100").gameObject.SetActive(false);
                 break;
             case 4:
-                secondaryResourceUI.transform.Find("100").gameObject.SetActive(true);
+                secondaryResourceUI.transform.Find("100R").gameObject.SetActive(true);
                 break;
         }
     }

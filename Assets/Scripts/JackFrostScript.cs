@@ -24,7 +24,7 @@ public class JackFrostScript : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Hero(Clone)");
-        GetComponent<EnemyHealthManager>().health = 100;
+        GetComponent<EnemyHealthManager>().health = 51;
         GetComponent<EnemyHealthManager>().pointValue = 100;
         transform.position = new Vector3(transform.position.x, 0f, 0f);
         destinationX = Random.Range(2f, 7.5f);
