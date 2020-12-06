@@ -17,7 +17,7 @@ public class LevelLoader : MonoBehaviour
         transitionObjects[0].SetActive(true);
 
         //specific case for transitioning INTO Level 1
-        if (SceneManager.GetActiveScene().buildIndex == 1 && !GameManagerScript.gameOverScreen && !(GameManagerScript.restarting)) transitionObjects[1].SetActive(true);
+        //if (SceneManager.GetActiveScene().buildIndex == 1 && !GameManagerScript.gameOverScreen && !(GameManagerScript.restarting)) transitionObjects[1].SetActive(true);
         GameManagerScript.restarting = false;
     }
 
@@ -41,12 +41,13 @@ public class LevelLoader : MonoBehaviour
     public void LoadNextLevel()
     {
         //specific case for transitioning OUT OF title screen
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        /*if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             transitionObjects[0].SetActive(false);//set fade to false, since title screen only needs to and has already faded in
             transitionObjects[1].SetActive(true);//set pan to true, since now we need to pan
             transitionObjects[1].GetComponentInChildren<Animator>().SetTrigger("Start");
-        }
+        }*/
+        transitionObjects[0].SetActive(true);
         //doesn't matter if this triggers on the title screen since its gameObject isn't active anymore
         transitionObjects[0].GetComponentInChildren<Animator>().SetTrigger("Start");
 
