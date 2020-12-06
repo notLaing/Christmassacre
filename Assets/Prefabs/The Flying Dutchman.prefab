@@ -113,10 +113,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 129866614791901359}
-  monkeyChain1Prefab: {fileID: 3586413101368187715, guid: 6380a66edb0662f499c83083bc046016, type: 3}
-  monkeyChain2Prefab: {fileID: 7415057026770079688, guid: 3603a670635672045b2b250e23789519, type: 3}
-  monkeyFistPrefab: {fileID: 7847874345291324505, guid: e6889cf23b273ca43b379339e0482cbb, type: 3}
-  monkeyPrefab: {fileID: 574136386202113348, guid: 2047d86a9aa303849a8cbb4b30bbdec1, type: 3}
+  monkeyChain1Prefab: {fileID: 8395616847950509176, guid: d0fb5c5e54a8ec94fa6f9d498dbe2c86, type: 3}
+  monkeyChain2Prefab: {fileID: 7512476941552704980, guid: dd7335ac63c3bf040ad51f729f0fc2a9, type: 3}
+  monkeyFistPrefab: {fileID: 3838606158935345671, guid: adcbb203c42f23c47a054aa028920f83, type: 3}
+  monkeyPrefab: {fileID: 2540620671452927605, guid: 9713f4a0cb9625d4ab30da3f0069b342, type: 3}
 --- !u!1 &6123655822450256878
 GameObject:
   m_ObjectHideFlags: 0

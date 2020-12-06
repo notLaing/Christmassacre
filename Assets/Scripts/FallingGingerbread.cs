@@ -12,9 +12,8 @@ public class FallingGingerbread : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<EnemyHealthManager>().health = 3;
+        GetComponent<EnemyHealthManager>().health = 4;
         GetComponent<EnemyHealthManager>().pointValue = 2;
-        GetComponent<EnemyHealthManager>().damageValue = 10;
     }
 
     void FixedUpdate()
@@ -25,5 +24,13 @@ public class FallingGingerbread : MonoBehaviour
         //move diagonally like a pendulum. X-direction slightly boosted to always move forward some amount with background
         transform.position += new Vector3((enemySpeed * multiplier * Time.fixedDeltaTime * .04f) - (enemySpeed * .85f * Time.fixedDeltaTime), grav * Time.fixedDeltaTime, 0f);
         transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, multiplier));
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }
     }
 }

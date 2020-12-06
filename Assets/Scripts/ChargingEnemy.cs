@@ -18,9 +18,8 @@ public class ChargingEnemy : MonoBehaviour
         player = GameObject.Find("Hero(Clone)");
         direction.x = -1f;
         direction.y = 0f;
-        GetComponent<EnemyHealthManager>().health = 5;
-        GetComponent<EnemyHealthManager>().pointValue = 3;
-        GetComponent<EnemyHealthManager>().damageValue = 30;
+        GetComponent<EnemyHealthManager>().health = 6;
+        GetComponent<EnemyHealthManager>().pointValue = 4;
     }
 
     void FixedUpdate()
@@ -65,10 +64,6 @@ public class ChargingEnemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        /*if (collider.gameObject.tag == "Player")
-        {
-            Debug.Log("Player");
-        }*/
         if (collider.gameObject.tag == "Wall")
         {
             Destroy(gameObject);

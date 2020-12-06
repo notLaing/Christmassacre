@@ -10,7 +10,7 @@ public class ShootingEnemy : MonoBehaviour
     public Rigidbody2D rb;
 
     Vector2 direction;
-    float enemySpeed = 1f;
+    float enemySpeed = 4f;
     float distanceFromPlayer = 0f;
 
     public Transform enemyFirePoint;
@@ -23,10 +23,9 @@ public class ShootingEnemy : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Hero(Clone)");
-        distanceFromPlayer = Random.Range(3f, 7f);
-        GetComponent<EnemyHealthManager>().health = 1;
-        GetComponent<EnemyHealthManager>().pointValue = 2;
-        GetComponent<EnemyHealthManager>().damageValue = 5;
+        distanceFromPlayer = Random.Range(4f, 7f);
+        GetComponent<EnemyHealthManager>().health = 4;
+        GetComponent<EnemyHealthManager>().pointValue = 3;
     }
 
     void FixedUpdate()
@@ -71,26 +70,4 @@ public class ShootingEnemy : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(enemyFirePoint.right * enemyBulletSpeed * -1, ForceMode2D.Impulse);
     }
-
-    /*void OnCollisionEnter2D(Collision2D collision)
-    {
-        //Debug.Log("Hit something");
-        if (collision.gameObject.tag == "Enemy")
-        {
-            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-        }
-        else if (collision.gameObject.tag == "Player")
-        {
-            //Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-            Debug.Log("Player");
-        }
-    }*/
-
-    /*void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.gameObject.tag == "Player")
-        {
-            Debug.Log("Player");
-        }
-    }*/
 }

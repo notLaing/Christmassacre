@@ -5,9 +5,8 @@ using UnityEngine;
 public class EnemyHealthManager : MonoBehaviour
 {
     public GameObject player;
-    public int health = 2;
+    public int health = 3;
     public int pointValue = 1;
-    public int damageValue = 10;
 
     // Start is called before the first frame update
     void Start()

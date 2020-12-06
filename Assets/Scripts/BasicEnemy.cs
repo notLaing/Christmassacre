@@ -30,14 +30,6 @@ public class BasicEnemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        /*if (collider.gameObject.tag == "Enemy")//not necessary, since I can just ignore collisions with other enemies
-        {
-            Debug.Log("Enemy");
-        }
-        else if (collider.gameObject.tag == "Player")
-        {
-            Debug.Log("Player");
-        }*/
         if (collider.gameObject.tag == "Wall")
         {
             Destroy(gameObject);
