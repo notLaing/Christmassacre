@@ -42,6 +42,11 @@ public class PlayerController : MonoBehaviour
     public GameObject transitioner;
     public Text pointText;
 
+    //Jack Frost
+    public GameObject JackFrost;
+    bool spawnedJack = false;
+    public bool beatJack = false;
+
     void Start()
     {
         cam = Camera.main;
@@ -94,10 +99,11 @@ public class PlayerController : MonoBehaviour
             {
                 //make text that shows that dutchman hasn't been unlocked yet
             }*/
-            
-            if(secondaryResource > 0)
+
+            if (secondaryResource > 0)
             {
                 Instantiate(screenWipe);
+                --secondaryResource;
                 updateResource();
             }
             
@@ -166,28 +172,33 @@ public class PlayerController : MonoBehaviour
                 }
                 break;
             case 2:
-                if (stageKills > 29 && !progressing)
+                if (stageKills > 24 && !progressing)
                 {
                     levelPrep();
                     progressing = true;
                 }
                 break;
             case 3:
-                if (stageKills > 39 && !progressing)
+                if (stageKills > 29 && !progressing)
                 {
                     levelPrep();
                     progressing = true;
                 }
                 break;
             case 4:
-                if (stageKills > 49 && !progressing)
+                if (stageKills > 34 && !progressing)
                 {
                     levelPrep();
-                    progressing = true;
+                    if (!spawnedJack)
+                    {
+                        Instantiate(JackFrost);
+                        spawnedJack = true;
+                    }
+                    if (beatJack) progressing = true;
                 }
                 break;
         }
-        if(progressing)
+        if(progressing)//might not be getting called when you first pass the condition
         {
             levelCountdown -= Time.fixedDeltaTime;
             enemiesOnScreen = GameObject.FindGameObjectsWithTag("Enemy");

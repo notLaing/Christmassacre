@@ -47,4 +47,12 @@ MonoBehaviour:
   shootingEnemyPrefab: {fileID: 1486316770809621019, guid: 9d3e5e474412327478bbf388e97ef7c3, type: 3}
   chargingEnemyPrefab: {fileID: 2808963206823302721, guid: ba5e83248c63d594e927a641135fd22f, type: 3}
   gingerbreadPrefab: {fileID: 3092062441848466873, guid: 1341e20d1db5b0643bc3e77ac0c2a0bd, type: 3}
+  presentRed: {fileID: 8477600994171413303, guid: 3466160dc06f9474ea6ca72759671a7c, type: 3}
+  presentBlue: {fileID: 8259925785471704885, guid: 340420d48e1e5684e9c52ecbfe49ad94, type: 3}
+  presentPurple: {fileID: 3706159846234914110, guid: 691e61d60891312418130094df6f949e, type: 3}
+  presentGreen: {fileID: 2683924806009077674, guid: 4d60e4f9463b1d043b0ea7fdcdf47c99, type: 3}
+  ornamentRed: {fileID: 4119644246387980025, guid: 2c535e119886d8a48ae2b2ae49cfbbbe, type: 3}
+  ornamentGreen: {fileID: 8665771887181077811, guid: eabaec34ff14176478b0bc3f375bc7b3, type: 3}
+  ornamentStriped: {fileID: 3378099116931098833, guid: cd603eee65ed3c443a1220a720aa15b2, type: 3}
+  cookies: {fileID: 6468643679234381852, guid: ffe6f7d6c762fd840a25e0ddd193a2b2, type: 3}
   spawn: 0

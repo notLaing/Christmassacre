@@ -192,6 +192,8 @@ MonoBehaviour:
   resourceUI: {fileID: 0}
   transitioner: {fileID: 0}
   pointText: {fileID: 0}
+  JackFrost: {fileID: 1290081873937436200, guid: e82178d3c3ac2a844af0a263dd01e1b6, type: 3}
+  beatJack: 0
 --- !u!95 &795442394072665145
 Animator:
   serializedVersion: 3

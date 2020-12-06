@@ -13,6 +13,6 @@ public class BulletScript : MonoBehaviour
             collider.gameObject.GetComponent<EnemyHealthManager>().health--;
         }
 
-        Destroy(gameObject);
+        if (collider.gameObject.tag != "Powerup") Destroy(gameObject);
     }
 }

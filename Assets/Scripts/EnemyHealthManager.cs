@@ -21,6 +21,7 @@ public class EnemyHealthManager : MonoBehaviour
         {
             player.GetComponent<PlayerController>().stageKills += 1;
             GameManagerScript.score += pointValue;
+            if (transform.Find("Jack") != null) player.GetComponent<PlayerController>().beatJack = true;
             Destroy(gameObject);
         }
     }
