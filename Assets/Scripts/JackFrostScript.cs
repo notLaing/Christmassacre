@@ -87,7 +87,7 @@ public class JackFrostScript : MonoBehaviour
             }//not moving; action
         }//else
 
-        if(GetComponent<EnemyHealthManager>().health < 50)
+        if(GetComponent<EnemyHealthManager>().health < 20)
         {
             waitTimeCap = 1.5f;
             enemySpeed = 4.5f;

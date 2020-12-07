@@ -39,6 +39,9 @@ public class PlayerController : MonoBehaviour
     public GameObject resourceUI;
     GameObject healthUI;
     GameObject secondaryResourceUI;
+    public GameObject fixedResource;
+    GameObject fixedHealth;
+    GameObject fixedSecondary;
     public GameObject transitioner;
     public Text[] pointText;
 
@@ -56,6 +59,10 @@ public class PlayerController : MonoBehaviour
         resourceUI = GameObject.Find("UI");
         healthUI = resourceUI.transform.Find("Canvas").gameObject.transform.Find("Empty Bars").gameObject.transform.Find("Health").gameObject;
         secondaryResourceUI = resourceUI.transform.Find("Canvas").gameObject.transform.Find("Empty Bars").gameObject.transform.Find("Resource").gameObject;
+
+        fixedResource = GameObject.Find("ResourceUI");
+        fixedHealth = fixedResource.transform.Find("Health").gameObject;
+        fixedSecondary = fixedResource.transform.Find("Resource").gameObject;
     }
 
     // Update is called once per frame
@@ -248,6 +255,7 @@ public class PlayerController : MonoBehaviour
         if (collider.gameObject.tag == "Powerup")
         {
             ++secondaryResource;
+            if (secondaryResource > 4) secondaryResource = 4;
         }
         updateResource();
     }
@@ -274,22 +282,22 @@ public class PlayerController : MonoBehaviour
         switch(health)
         {
             case 5:
-                healthUI.transform.Find("100").gameObject.SetActive(true);
+                fixedHealth.transform.Find("100").gameObject.SetActive(true);
                 break;
             case 4:
-                healthUI.transform.Find("100").gameObject.SetActive(false);
+                fixedHealth.transform.Find("100").gameObject.SetActive(false);
                 break;
             case 3:
-                healthUI.transform.Find("80").gameObject.SetActive(false);
+                fixedHealth.transform.Find("80").gameObject.SetActive(false);
                 break;
             case 2:
-                healthUI.transform.Find("60").gameObject.SetActive(false);
+                fixedHealth.transform.Find("60").gameObject.SetActive(false);
                 break;
             case 1:
-                healthUI.transform.Find("40").gameObject.SetActive(false);
+                fixedHealth.transform.Find("40").gameObject.SetActive(false);
                 break;
             case 0:
-                healthUI.transform.Find("20").gameObject.SetActive(false);
+                fixedHealth.transform.Find("20").gameObject.SetActive(false);
                 break;
         }
 
@@ -297,22 +305,22 @@ public class PlayerController : MonoBehaviour
         switch (secondaryResource)
         {
             case 0:
-                secondaryResourceUI.transform.Find("25").gameObject.SetActive(false);
+                fixedSecondary.transform.Find("25").gameObject.SetActive(false);
                 break;
             case 1:
-                secondaryResourceUI.transform.Find("25").gameObject.SetActive(true);
-                secondaryResourceUI.transform.Find("50").gameObject.SetActive(false);
+                fixedSecondary.transform.Find("25").gameObject.SetActive(true);
+                fixedSecondary.transform.Find("50").gameObject.SetActive(false);
                 break;
             case 2:
-                secondaryResourceUI.transform.Find("50").gameObject.SetActive(true);
-                secondaryResourceUI.transform.Find("75").gameObject.SetActive(false);
+                fixedSecondary.transform.Find("50").gameObject.SetActive(true);
+                fixedSecondary.transform.Find("75").gameObject.SetActive(false);
                 break;
             case 3:
-                secondaryResourceUI.transform.Find("75").gameObject.SetActive(true);
-                secondaryResourceUI.transform.Find("100").gameObject.SetActive(false);
+                fixedSecondary.transform.Find("75").gameObject.SetActive(true);
+                fixedSecondary.transform.Find("100").gameObject.SetActive(false);
                 break;
             case 4:
-                secondaryResourceUI.transform.Find("100R").gameObject.SetActive(true);
+                fixedSecondary.transform.Find("100R").gameObject.SetActive(true);
                 break;
         }
     }

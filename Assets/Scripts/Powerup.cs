@@ -14,6 +14,7 @@ public class Powerup : MonoBehaviour
         bobTime += Time.fixedDeltaTime;
         multiplier = Mathf.Cos(bobTime * 4f) * .75f;
         transform.position += new Vector3((-obstacleSpeed * Time.fixedDeltaTime), (multiplier * Time.fixedDeltaTime), 0f);
+        if (transform.position.x < -11f) Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D collider)

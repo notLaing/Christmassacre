@@ -47,6 +47,9 @@ public class LevelLoader : MonoBehaviour
             transitionObjects[1].SetActive(true);//set pan to true, since now we need to pan
             transitionObjects[1].GetComponentInChildren<Animator>().SetTrigger("Start");
         }*/
+
+        GameManagerScript.stageScore = GameManagerScript.score;
+
         transitionObjects[0].SetActive(true);
         //doesn't matter if this triggers on the title screen since its gameObject isn't active anymore
         transitionObjects[0].GetComponentInChildren<Animator>().SetTrigger("Start");
@@ -123,9 +126,11 @@ public class LevelLoader : MonoBehaviour
             transitionObjects[0].GetComponentInChildren<Animator>().SetTrigger("Start");
         }
 
+        GameManagerScript.score = GameManagerScript.stageScore;
+
 
         //Play animation
-        else transition.SetTrigger("Start");
+        transition.SetTrigger("Start");
 
         //Wait
         yield return new WaitForSeconds(transitionTime);
