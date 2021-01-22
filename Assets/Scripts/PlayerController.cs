@@ -286,6 +286,7 @@ public class PlayerController : MonoBehaviour
                 break;
             case 4:
                 fixedHealth.transform.Find("100").gameObject.SetActive(false);
+                Debug.Log("Test");
                 break;
             case 3:
                 fixedHealth.transform.Find("80").gameObject.SetActive(false);
@@ -317,7 +318,7 @@ public class PlayerController : MonoBehaviour
                 break;
             case 3:
                 fixedSecondary.transform.Find("75").gameObject.SetActive(true);
-                fixedSecondary.transform.Find("100").gameObject.SetActive(false);
+                fixedSecondary.transform.Find("100R").gameObject.SetActive(false);
                 break;
             case 4:
                 fixedSecondary.transform.Find("100R").gameObject.SetActive(true);
